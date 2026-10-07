@@ -28,7 +28,6 @@ let
   runtimeDeps =
     with pkgs; [
       bash
-      bc
       coreutils
       curl
       deno
@@ -44,7 +43,6 @@ let
       ripgrep
       rsync
       systemd
-      wget
       xdg-user-dirs
       xdg-utils
 
@@ -67,9 +65,7 @@ let
     ++ optionalTop "ffmpeg"
     ++ optionalTop "fish"
     ++ optionalTop "foot"
-    ++ optionalTop "fuzzel"
     ++ optionalTop "geoclue2"
-    ++ optionalTop "hyprland"
     ++ optionalTop "hyprpicker"
     ++ optionalTop "gum"
     ++ optionalTop "imagemagick"
@@ -102,13 +98,9 @@ let
     ++ optionalQt6 "qtdeclarative"
     ++ optionalQt6 "qtimageformats"
     ++ optionalQt6 "qtmultimedia"
-    ++ optionalQt6 "qtpositioning"
-    ++ optionalQt6 "qtquicktimeline"
-    ++ optionalQt6 "qtsensors"
     ++ optionalQt6 "qtsvg"
     ++ optionalQt6 "qttools"
     ++ optionalQt6 "qttranslations"
-    ++ optionalQt6 "qtvirtualkeyboard"
     ++ optionalQt6 "qtwayland";
 
   materialSymbolsFont =
@@ -129,11 +121,7 @@ let
     ++ optionalQt6 "qtdeclarative"
     ++ optionalQt6 "qtimageformats"
     ++ optionalQt6 "qtmultimedia"
-    ++ optionalQt6 "qtpositioning"
-    ++ optionalQt6 "qtquicktimeline"
-    ++ optionalQt6 "qtsensors"
     ++ optionalQt6 "qtsvg"
-    ++ optionalQt6 "qtvirtualkeyboard"
     ++ optionalQt6 "qtwayland";
 in
 pkgs.stdenvNoCC.mkDerivation {
