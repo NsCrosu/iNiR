@@ -25,7 +25,8 @@ PanelWindow {
     WlrLayershell.layer: WlrLayer.Overlay
     WlrLayershell.namespace: "quickshell:annotationEditor"
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
-    screen: Quickshell.screens[0] ?? null
+    screen: Quickshell.screens.find(s => s.name === GlobalStates.annotationEditorScreenName)
+        ?? GlobalStates.primaryScreen ?? null
     color: "transparent"
     anchors { top: true; left: true; right: true; bottom: true }
 
@@ -74,6 +75,7 @@ PanelWindow {
     function close() {
         GlobalStates.annotationEditorOpen = false;
         GlobalStates.annotationEditorPath = "";
+        GlobalStates.annotationEditorScreenName = "";
         root.finished();
     }
 
