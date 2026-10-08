@@ -131,6 +131,7 @@ PanelWindow {
         // ── Canvas (image + annotations) — this is what gets exported ─────────
         Item {
             id: captureArea
+            clip: true
             Layout.alignment: Qt.AlignHCenter
             readonly property real maxW: root.width * 0.82
             readonly property real maxH: root.height * 0.74
